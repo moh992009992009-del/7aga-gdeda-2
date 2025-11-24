@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الأحذية والجاكيتات</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- اختيار اللغة -->
+<div class="language-selector" id="languageSelector">
+    <h2>اختر لغتك / Choose your language</h2>
+    <button onclick="setLanguage('ar')">العربية</button>
+    <button onclick="setLanguage('en')">English</button>
+</div>
+
+<!-- شكل جديد لاختيار اللغة بعد الدخول -->
+<div id="langDropdownContainer" style="display:none; text-align:center; margin:20px;">
+    <label id="langLabel" for="langSelect">🌐 اللغة:</label>
+    <select id="langSelect" style="padding:5px 10px; font-size:16px;">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+    </select>
+</div>
+
+<!-- الموقع من فوق -->
+<div class="header" id="header">
+    <h1 id="welcome">مرحباً بكم في متجر الأحذية والجاكيتات</h1>
+    <p id="subtitle">اكتشف أحدث الأحذية والملابس الخارجية!</p>
+</div>
+
+<!-- قسم الأحذية -->
+<h2 id="shoesTitle">الأحذية</h2>
+<table class="product-table">
+    <tr>
+        <td>
+            <a href="shose.html">
+                <img src="p/2.webp" alt="أحذية الجري">
+            </a>
+        </td>
+        <td>
+            <h3 id="shoe1Title">أحذية الجري</h3>
+            <p id="shoe1Desc"><p>  </p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="shose2.html">
+                <img src="p/1.webp" alt="حذاء كاجوال">
+            </a>
+        </td>
+        <td>
+            <h3 id="shoe2Title">حذاء كاجوال</h3>
+            <p id="shoe2Desc"><p>  </p>
+        </td>
+    </tr>
+</table>
+
+
+
+<!-- هنا اللغه يا جموس بحر علم -->
+<script>
+function setLanguage(lang) {
+    document.getElementById("languageSelector").style.display = "none";
+    document.getElementById("langDropdownContainer").style.display = "block";
+    document.getElementById("langSelect").value = lang;
+    applyLanguage(lang);
+}
+
+function applyLanguage(lang) {
+    const label = document.getElementById("langLabel");
+    if (lang === "en") {
+        document.documentElement.lang = "en";
+        document.documentElement.dir = "ltr";
+        label.textContent = "🌐 Language:";
+        document.getElementById("welcome").innerText = "Welcome to the Shoes & Jackets Store";
+        document.getElementById("subtitle").innerText = "Discover the latest shoes and outerwear!";
+        document.getElementById("shoesTitle").innerText = "Shoes";
+        document.getElementById("shoe1Title").innerText = "Running Shoes";
+        document.getElementById("shoe1Desc").innerText = "The best and highest quality shoes for running on all ground surfaces";
+        document.getElementById("shoe2Title").innerText = "Casual Shoes";
+        document.getElementById("shoe2Desc").innerText = "Perfect for wear";
+        document.getElementById("jacketsTitle").innerText = "Jackets";
+        document.getElementById("jacket1Title").innerText = "Leather Jacket";
+        document.getElementById("jacket1Desc").innerText = "Classic leather jacket for a bold look. $179.99";
+        document.getElementById("jacket2Title").innerText = "Winter Coat";
+        document.getElementById("jacket2Desc").innerText = "Stay warm with this insulated winter coat. $129.99";
+    } else {
+        document.documentElement.lang = "ar";
+        document.documentElement.dir = "rtl";
+        label.textContent = "🌐 اللغة:";
+        document.getElementById("welcome").innerText = "مرحباً بكم في متجر الأحذية والجاكيتات";
+        document.getElementById("subtitle").innerText = "اكتشف أحدث الأحذية والملابس الخارجية!";
+        document.getElementById("shoesTitle").innerText = "الأحذية";
+        document.getElementById("shoe1Title").innerText = "أحذية الجري";
+        document.getElementById("shoe1Desc").innerText = "احسن و اجود الاحذيه للركض على جميع الاسطح الارضيه";
+        document.getElementById("shoe2Title").innerText = "حذاء كاجوال";
+        document.getElementById("shoe2Desc").innerText = "مثالي للارتداء ";
+        document.getElementById("jacketsTitle").innerText = "الجاكيتات";
+        document.getElementById("jacket1Title").innerText = "جاكيت جلدي";
+        document.getElementById("jacket1Desc").innerText = "جاكيت جلدي كلاسيكي لمظهر جريء. 179.99 $";
+        document.getElementById("jacket2Title").innerText = "معطف شتوي";
+        document.getElementById("jacket2Desc").innerText = "ابق دافئاً مع هذا المعطف الشتوي المعزول. 129.99 $";
+    }
+}
+
+// عند تغيير اللغة من القائمة الجديدة
+document.getElementById("langSelect").addEventListener("change", function() {
+    applyLanguage(this.value);
+});
+</script>
+
+</body>
+</html>

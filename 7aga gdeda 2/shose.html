@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أحذية الجري</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      direction: rtl;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    select {
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .item {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 220px;
+      text-align: center;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .brand {
+      padding: 8px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .price {
+      padding-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <h1 id="pageTitle">أحذية الجري</h1>
+  <div>
+    <label id="langLabel" for="langSelect">🌐 اللغة:</label>
+    <select id="langSelect">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+</header>
+
+
+  <!-- أحذية Nike -->
+  <h2 data-ar="أحذية Nike" data-en="Nike Shoes">أحذية Nike</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Nike Air Zoom.avif"><div class="brand">Nike Air Zoom</div><div class="price">$89.99</div></div>
+    <div class="item"><img src="p/Nike Pegasus.webp"><div class="brand">Nike Pegasus</div><div class="price">$94.50</div></div>
+    <div class="item"><img src="p/Nike Infinity Run.avif"><div class="brand">Nike Infinity Run</div><div class="price">$102.00</div></div>
+    <div class="item"><img src="p/Nike React Miler.jpeg"><div class="brand">Nike React Miler</div><div class="price">$85.75</div></div>
+    <div class="item"><img src="p/Nike Zoom Fly.avif"><div class="brand">Nike Zoom Fly</div><div class="price">$110.25</div></div>
+  </div>
+
+  <!-- أحذية Adidas -->
+  <h2 data-ar="أحذية Adidas" data-en="Adidas Shoes">أحذية Adidas</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Adidas Ultraboost.avif"><div class="brand">Adidas Ultraboost</div><div class="price">$119.99</div></div>
+    <div class="item"><img src="p/didas Adizero.avif"><div class="brand">Adidas Adizero</div><div class="price">$99.50</div></div>
+    <div class="item"><img src="p/Adidas Solar Gli.avif"><div class="brand">Adidas Solar Glide</div><div class="price">$105.00</div></div>
+    <div class="item"><img src="p/Adidas SL20.jpg"><div class="brand">Adidas SL20</div><div class="price">$88.75</div></div>
+    <div class="item"><img src="p/Adidas Supernova.avif"><div class="brand">Adidas Supernova</div><div class="price">$92.25</div></div>
+  </div>
+
+  <!-- أحذية Puma -->
+  <h2 data-ar="أحذية Puma" data-en="Puma Shoes">أحذية Puma</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Puma Velocity Nitro.avif"><div class="brand">Puma Velocity Nitro</div><div class="price">$74.99</div></div>
+    <div class="item"><img src="p/Puma Deviate Elite.avif"><div class="brand">Puma Deviate Elite</div><div class="price">$120.00</div></div>
+    <div class="item"><img src="p/Puma Liberate Nitro.jpeg"><div class="brand">Puma Liberate Nitro</div><div class="price">$79.50</div></div>
+    <div class="item"><img src="p/Puma Magnify.jpeg"><div class="brand">Puma Magnify</div><div class="price">$85.00</div></div>
+    <div class="item"><img src="p/Puma Electrify.avif"><div class="brand">Puma Electrify</div><div class="price">$69.99</div></div>
+  </div>
+
+  <!-- أحذية Reebok -->
+  <h2 data-ar="أحذية Reebok" data-en="Reebok Shoes">أحذية Reebok</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Reebok Floatride.webp"><div class="brand">Reebok Floatride</div><div class="price">$95.00</div></div>
+    <div class="item"><img src="p/Reebok Zig Kinetica.jpeg"><div class="brand">Reebok Zig Kinetica</div><div class="price">$89.99</div></div>
+    <div class="item"><img src="p/Reebok Nano X.jpg"><div class="brand">Reebok Nano X</div><div class="price">$99.50</div></div>
+    <div class="item"><img src="p/Reebok Energy.jpg"><div class="brand">Reebok Energy</div><div class="price">$84.00</div></div>
+    <div class="item"><img src="p/Reebok Fusion.jpeg"><div class="brand">Reebok Fusion</div><div class="price">$78.25</div></div>
+  </div>
+
+  <!-- أحذية Asics -->
+  <h2 data-ar="أحذية Asics" data-en="Asics Shoes">أحذية Asics</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Asics Gel-Nimbus.jpg"><div class="brand">Asics Gel-Nimbus</div><div class="price">$110.00</div></div>
+    <div class="item"><img src="p/Asics Kayano.webp"><div class="brand">Asics Kayano</div><div class="price">$115.50</div></div>
+    <div class="item"><img src="p/Asics Novablast.webp"><div class="brand">Asics Novablast</div><div class="price">$98.75</div></div>
+    <div class="item"><img src="p/Asics GT-2000.jpg"><div class="brand">Asics GT-2000</div><div class="price">$90.00</div></div>
+    <div class="item"><img src="p/Asics DynablastAsics Dynablast.webp"><div class="brand">Asics Dynablast</div><div class="price">$85.25</div></div>
+  </div>
+
+  <!-- أحذية New Balance -->
+  <h2 data-ar="أحذية New Balance" data-en="New Balance Shoes">أحذية New Balance</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/New Balance FuelCell.webp"><div class="brand">New Balance FuelCell</div><div class="price">$99.99</div></div>
+    <div class="item"><img src="p/NB Fresh Foam.webp"><div class="brand">NB Fresh Foam</div><div class="price">$94.50</div></div>
+    <div class="item"><img src="p/NB 1080v12.webp"><div class="brand">NB 1080v12</div><div class="price">$109.00</div></div>
+    <div class="item"><img src="p/NB Rebel v3.webp"><div class="brand">NB Rebel v3</div><div class="price">$102.25</div></div>
+    <div class="item"><img src="p/NB More v4.jpeg"><div class="brand">NB More v4</div><div class="price">$95.75</div></div>
+  </div>
+
+  <!-- أحذية Saucony -->
+  <h2 data-ar="أحذية Saucony" data-en="Saucony Shoes">أحذية Saucony</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Saucony Endorphin Speed.jpg"><div class="brand">Saucony Endorphin Speed</div><div class="price">$120.00</div></div>
+    <div class="item"><img src="p/Saucony Ride 15.jpg"><div class="brand">Saucony Ride 15</div><div class="price">$89.99</div></div>
+    <div class="item"><img src="p/Saucony Triumph.jpg"><div class="brand">Saucony Triumph</div><div class="price">$105.50</div></div>
+    <div class="item"><img src="p/Saucony Kinvara.jpg"><div class="brand">Saucony Kinvara</div><div class="price">$84.75</div></div>
+    <div class="item"><img src="p/Saucony Guide.jpeg"><div class="brand">Saucony Guide</div><div class="price">$92.00</div></div>
+  </div>
+
+  <!-- أحذية Hoka -->
+  <h2 data-ar="أحذية Hoka" data-en="Hoka Shoes">أحذية Hoka</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Hoka Clifton 9.jpg"><div class="brand">Hoka Clifton 9</div><div class="price">$115.00</div></div>
+    <div class="item"><img src="p/Hoka Bondi 8.webp"><div class="brand">Hoka Bondi 8</div><div class="price">$125.50</div></div>
+    <div class="item"><img src="p/Hoka Mach 5.jpeg"><div class="brand">Hoka Mach 5</div><div class="price">$99.99</div></div>
+    <div class="item"><img src="p/Hoka Rincon.jpg"><div class="brand">Hoka Rincon</div><div class="price">$89.50</div></div>
+    <div class="item"><img src="p/Hoka Rincon 12.webp"><div class="brand">Hoka Rincon 12</div><div class="price">$82.50</div></div>
+  </div>
+
+<!-- هنا اللغه يا بغل -->
+<script>
+  const langSelect = document.getElementById('langSelect');
+  const pageTitle = document.getElementById('pageTitle');
+  const body = document.body;
+  const langLabel = document.getElementById('langLabel');
+
+  const translations = {
+    ar: {
+      title: "أحذية الجري",
+      direction: "rtl",
+      label: "🌐 اللغة:"
+    },
+    en: {
+      title: "Running Shoes",
+      direction: "ltr",
+      label: "🌐 Language:"
+    }
+  };
+
+  function updateLang() {
+    const lang = langSelect.value;
+    const t = translations[lang];
+
+    // تغيير العنوان والاتجاه
+    pageTitle.textContent = t.title;
+    body.style.direction = t.direction;
+
+    // تغيير نص كلمة "اللغة" أو "Language"
+    langLabel.textContent = t.label;
+
+    // تحديث نصوص العناوين (h2) بناءً على data-ar / data-en الموجودة
+    document.querySelectorAll('h2').forEach(h2 => {
+      // dataset uses camelCase keys, e.g. dataset.en or dataset.ar
+      h2.textContent = h2.dataset[lang];
+    });
+  }
+
+  // حدث التبديل
+  langSelect.addEventListener('change', updateLang);
+
+  // تأكد من تطبيق اللغة الافتراضية عند تحميل الصفحة
+  document.addEventListener('DOMContentLoaded', updateLang);
+</script>
+
+
+</body>
+</html>

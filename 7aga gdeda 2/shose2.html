@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>احذيه كاجوال</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      direction: rtl;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    select {
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .item {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 220px;
+      text-align: center;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .brand {
+      padding: 8px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .price {
+      padding-bottom: 10px;
+      font-size: 18px;
+      color: #333;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+
+<header>
+  <h1 id="pageTitle">احذيه كاجوال</h1>
+  <div>
+    <label id="langLabel" for="langSelect">🌐 اللغة:</label>
+    <select id="langSelect">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+</header>
+
+
+  <!-- أحذية Tommy Hilfiger -->
+  <h2 data-ar="احذيه تومي هيلفيغر" data-en="Tommy Hilfiger shoes">احذيه تومي هيلفيغر</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Sneakers shoes.jpg"><div class="brand">Sneakers shoes</div><div class="price">$89.99</div></div>
+    <div class="item"><img src="p/Sandals with a touch strap and a brand logo brooch.webp"><div class="brand">Sandals with a touch strap and a brand logo brooch</div><div class="price">$94.50</div></div>
+    <div class="item"><img src="p/Suede loafer with a small opening.webp"><div class="brand">Suede loafer with a small opening</div><div class="price">$102.00</div></div>
+    <div class="item"><img src="p/Leather ankle boots.webp"><div class="brand">Leather ankle boots</div><div class="price">$85.75</div></div>
+  </div>
+
+  <!-- أحذية Timberland -->
+  <h2 data-ar="احذيه تمبرلاند " data-en="Timberland Shoes">احذيه تمبرلاند</h2>
+  <div class="gallery">
+    <div class="item"><img src="p/Chukka Boot.jpg"><div class="brand">Chukka Boot</div><div class="price">$119.99</div></div>
+    <div class="item"><img src="p/White Ledge Hiking Boot.jpeg"><div class="brand"> White Ledge Hiking Boot</div><div class="price">$99.50</div></div>
+    <div class="item"><img src="p/Davis Square Sneaker.jpeg"><div class="brand">Davis Square Sneaker</div><div class="price">$105.00</div></div>
+    <div class="item"><img src="p/- Boat Shoe.webp"><div class="brand">- Boat Shoe</div><div class="price">$88.75</div></div>
+  </div>
+
+
+  </div>
+
+<!-- هنا اللغه يا عجل -->
+<script>
+  const langSelect = document.getElementById('langSelect');
+  const pageTitle = document.getElementById('pageTitle');
+  const body = document.body;
+  const langLabel = document.getElementById('langLabel');
+
+  const translations = {
+    ar: {
+      title: "احذيه كاجوال",
+      direction: "rtl",
+      label: "🌐 اللغة:"
+    },
+    en: {
+      title: "Casual Shoes",
+      direction: "ltr",
+      label: "🌐 Language:"
+    }
+  };
+
+  function updateLang() {
+    const lang = langSelect.value;
+    const t = translations[lang];
+
+    // تغيير العنوان والاتجاه
+    pageTitle.textContent = t.title;
+    body.style.direction = t.direction;
+
+    // تغيير نص كلمة "اللغة" أو "Language"
+    langLabel.textContent = t.label;
+
+    // تحديث نصوص العناوين (h2) بناءً على data-ar / data-en الموجودة
+    document.querySelectorAll('h2').forEach(h2 => {
+      // dataset uses camelCase keys, e.g. dataset.en or dataset.ar
+      h2.textContent = h2.dataset[lang];
+    });
+  }
+
+  // حدث التبديل
+  langSelect.addEventListener('change', updateLang);
+
+  // تأكد من تطبيق اللغة الافتراضية عند تحميل الصفحة
+  document.addEventListener('DOMContentLoaded', updateLang);
+</script>
+
+
+</body>
+</html>
